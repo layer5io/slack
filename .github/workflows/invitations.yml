@@ -14,4 +14,4 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           comment: 'Welcome to the Org.'
         env:
-          INVITE_TOKEN: ${{ secrets.RELEASE_NOTES_PAT }}
+          INVITE_TOKEN: ${{ secrets.RELEASEDRAFTER_PAT }}
