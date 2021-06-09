@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Working by Forking | slack</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Working by Forking" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Inviter for Layer5 Community Slack" />
+<meta property="og:description" content="Inviter for Layer5 Community Slack" />
+<link rel="canonical" href="http://localhost:4000/CONTRIBUTING-gitflow.html" />
+<meta property="og:url" content="http://localhost:4000/CONTRIBUTING-gitflow.html" />
+<meta property="og:site_name" content="slack" />
+<script type="application/ld+json">
+{"description":"Inviter for Layer5 Community Slack","@type":"WebPage","url":"http://localhost:4000/CONTRIBUTING-gitflow.html","headline":"Working by Forking","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=7e77ebe1c52fa71c7e73f10ede3f6049b8787aad">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://localhost:4000/">slack</a></h1>
+      
+
+      <h1 id="working-by-forking">Working by Forking</h1>
+<p>Just head over to the GitHub page and click the “Fork” button. It’s just that simple. Once you’ve done that, you can use your favorite git client to clone your repo or just head straight to the command line:</p>
+
+<h2 id="clone-your-fork-to-your-local-machine">Clone your fork to your local machine</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:USERNAME/FORKED-PROJECT.git
+</code></pre></div></div>
+<p>Keeping Your Fork Up to Date
+While this isn’t an absolutely necessary step, if you plan on doing anything more than just a tiny quick fix, you’ll want to make sure you keep your fork up to date by tracking the original “upstream” repo that you forked. To do this, you’ll need to add a remote:</p>
+
+<h2 id="add-upstream-repo-to-list-of-remotes">Add ‘upstream’ repo to list of remotes</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add upstream https://github.com/layer5io/meshery.git
+</code></pre></div></div>
+<p>(“meshery” is used as the example repo. Be sure to reference the <em>actual</em> repo you’re contributing to e.g. “meshery-linkerd”).</p>
+
+<h2 id="verify-the-new-remote-named-upstream">Verify the new remote named ‘upstream’</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote -v
+</code></pre></div></div>
+<p>Whenever you want to update your fork with the latest upstream changes, you’ll need to first fetch the upstream repo’s branches and latest commits to bring them into your repository:</p>
+
+<h2 id="fetch-from-upstream-remote">Fetch from upstream remote</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch upstream
+</code></pre></div></div>
+
+<h2 id="view-all-branches-including-those-from-upstream">View all branches, including those from upstream</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch -va
+</code></pre></div></div>
+<p>Now, checkout your own master branch and merge the upstream repo’s master branch:</p>
+
+<h2 id="checkout-your-master-branch-and-merge-upstream">Checkout your master branch and merge upstream</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master
+git merge upstream/master
+</code></pre></div></div>
+<p>If there are no unique commits on the local master branch, git will simply perform a fast-forward. However, if you have been making changes on master (in the vast majority of cases you probably shouldn’t be - see the next section, you may have to deal with conflicts. When doing so, be careful to respect the changes made upstream.</p>
+
+<p>Now, your local master branch is up-to-date with everything modified upstream.</p>
+
+<p><strong>Create a Branch</strong> (doing your work)
+Whenever you begin work on a new feature or bugfix, it’s important that you create a new branch. Not only is it proper git workflow, but it also keeps your changes organized and separated from the master branch so that you can easily submit and manage multiple pull requests for every task you complete.</p>
+
+<p>To create a new branch and start working on it, peform the following flow.</p>
+
+<h2 id="checkout-the-master-branch---you-want-your-new-branch-to-come-from-master">Checkout the master branch - you want your new branch to come from master</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master
+</code></pre></div></div>
+
+<h2 id="create-a-new-branch-give-your-branch-its-own-simple-informative-name">Create a new branch (give your branch its own simple informative name)</h2>
+<p>For enhancements use <code class="language-plaintext highlighter-rouge">feature/your_username/issue#</code> or <code class="language-plaintext highlighter-rouge">feature/your_username/name_of_feature</code></p>
+
+<p>For bugs use <code class="language-plaintext highlighter-rouge">bug/your_username/issue#</code> or <code class="language-plaintext highlighter-rouge">bug/your_username/name_of_bug</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch feature/jdoe/567
+</code></pre></div></div>
+
+<h2 id="switch-to-your-new-branch">Switch to your new branch</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout feature/jdoe/567
+</code></pre></div></div>
+<p>Now, go to town hacking away and making whatever changes you want to.</p>
+
+<h2 id="submitting-your-changes-a-pull-request">Submitting your changes (a Pull Request)</h2>
+<p>Prior to submitting your pull request, you might want to do a few things to clean up your branch and make it as simple as possible for the original repo’s maintainer to test, accept, and merge your work.</p>
+
+<p>In the time that you’ve been working on your changes, if any commits have been made to the upstream master branch, you will need to rebase your development branch so that merging it will be a simple fast-forward that won’t require any conflict resolution work.</p>
+
+<h2 id="fetch-upstream-master-and-merge-with-your-repos-master-branch">Fetch upstream master and merge with your repo’s master branch</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch upstream
+git checkout master
+git merge upstream/master
+</code></pre></div></div>
+
+<h2 id="if-there-were-any-new-commits-rebase-your-development-branch">If there were any new commits, rebase your development branch</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout feature/jdoe/567
+git rebase master
+</code></pre></div></div>
+<p>Now, it may be desirable to squash some of your smaller commits down into a small number of larger more cohesive commits. You can do this with an interactive rebase:</p>
+
+<h2 id="rebase-all-commits-on-your-development-branch">Rebase all commits on your development branch</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout
+git rebase -i master
+</code></pre></div></div>
+<p>This will open up a text editor where you can specify which commits to squash.</p>
+
+<h2 id="submitting">Submitting</h2>
+<p>Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes on your development branch and update.</p>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/layer5io/slack/edit/gh-pages/CONTRIBUTING-gitflow.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
