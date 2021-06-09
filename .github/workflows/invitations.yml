@@ -12,6 +12,6 @@ jobs:
           organization: layer5io
           label: issue/invite
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          comment: '<b>An invitation has been sent for the Layer5 GitHub Organization. :partying_face: Welcome to the community! 🎉</b><br><br>'
+          comment: "<b>An invitation has been sent for the Layer5 GitHub Organization. :partying_face: Welcome to the community! 🎉</b><br>Please leave a :star: [star on the project](../stargazers), if you haven't already. :smile:<br>"
         env:
           INVITE_TOKEN: ${{ secrets.RELEASEDRAFTER_PAT }}
