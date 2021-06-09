@@ -1,5 +1,7 @@
-# layer5-repo-template
-This repository is used as the boilerplate for consistency across all Layer5 repos.
+# Layer5 Community Slack
+This repository is used as the Slack inviter.
+
+Get your invitation to the [Layer5 Slack here](https://slack.layer5.io).
 
 <div>&nbsp;</div>
 
