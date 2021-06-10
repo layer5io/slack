@@ -21,6 +21,6 @@ jobs:
         uses: actions/github-script@v4
         with:
           script: |
-            console.log(context.issue.user.id)
+            console.log(context.issue.user)
             console.log(context)
           
