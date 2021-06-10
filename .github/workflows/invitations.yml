@@ -22,9 +22,11 @@ jobs:
         id: set-url
         with:
           script: |
-            const issue_url = context.issue.url 
-            return issue_url
-          result-encoding: string
+            const url = context.issue.url
+            const result = await github.request(url)
+            console.log(result)
+            return result
+            result-encoding: string
 
       - name: Get url
         run: echo "URL=${{steps.set-url.outputs.result}}" >> $GITHUB_ENV
