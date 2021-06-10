@@ -21,9 +21,7 @@ jobs:
         uses: actions/github-script@v4
         id: set-url
         with:
-          script: |
-            return context.issue.url
-            console.log(context.issue.url)
+          script: return context.issue.url
           result-encoding: string
         env:
           ISSUE_URL: context.issue.url
