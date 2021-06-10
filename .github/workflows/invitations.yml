@@ -27,10 +27,9 @@ jobs:
         env:
           ISSUE_URL: context.issue.url
           
-    - name: Notify slack
-      env:
-        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-      uses: pullreminders/slack-action@master
-      with:
-        args: '{\"channel\":\"CF9RK4H89\",\"text\":\"Someone has been invited the the layer5io GitHub org: ${{env.NAME}}\"}'
-
+      - name: Notify slack
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        uses: pullreminders/slack-action@master
+        with:
+          args: '{\"channel\":\"CF9RK4H89\",\"text\":\"Someone has been invited the the layer5io GitHub org: ${{env.NAME}}\"}'
