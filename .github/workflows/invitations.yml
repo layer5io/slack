@@ -26,7 +26,7 @@ jobs:
             const result = await github.request(url)
             console.log(result)
             return result
-            result-encoding: string
+          result-encoding: string
 
       - name: Get url
         run: echo "URL=${{steps.set-url.outputs.result}}" >> $GITHUB_ENV
