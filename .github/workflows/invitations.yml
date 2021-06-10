@@ -23,8 +23,7 @@ jobs:
         with:
           script: |
             const url = context.issue.url
-            const result = await github.request(url)
-            return result
+            return url
           result-encoding: string
 
       - name: Get url
