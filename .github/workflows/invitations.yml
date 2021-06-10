@@ -19,8 +19,18 @@ jobs:
 
       - name: View context attributes
         uses: actions/github-script@v4
+        id: set-name
         with:
-          script: |
-            console.log(context.issue.user)
-            console.log(context)
+          script: return context.issue.url
+          result-encoding: string
+        run: echo "NAME=${{steps.set-name.outputs.result}}"" >> $GITHUB_ENV
+        env:
+          ISSUE_URL: context.issue.url
           
+    - name: Notify slack
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      uses: pullreminders/slack-action@master
+      with:
+        args: '{\"channel\":\"CF9RK4H89\",\"text\":\"Someone has been invited the the layer5io GitHub org: ${{env.NAME}}\"}'
+
