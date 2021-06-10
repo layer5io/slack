@@ -27,7 +27,7 @@ jobs:
           ISSUE_URL: context.issue.url
 
       - name: Get name
-        run: echo "NAME=${{steps.set-name.outputs.result}}"" >> $GITHUB_ENV
+        run: echo "NAME=${{steps.set-name.outputs.result}}" >> $GITHUB_ENV
 
       - name: Notify slack
         env:
