@@ -24,12 +24,13 @@ jobs:
           script: |
             const url = context.issue.url
             const result = await github.request(url)
-            console.log(result)
             return result
           result-encoding: string
 
       - name: Get url
-        run: echo "URL=${{steps.set-url.outputs.result}}" >> $GITHUB_ENV
+        run: |
+          echo "URL=${{steps.set-url.outputs.result}}" >> $GITHUB_ENV
+          echo "ISSUE=${{steps.set-url.outputs.url}}" >> $GITHUB_ENV
 
       # - name: Notify slack
       #   env:
