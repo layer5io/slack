@@ -23,10 +23,12 @@ jobs:
         with:
           script: return context.issue.url
           result-encoding: string
-        run: echo "NAME=${{steps.set-name.outputs.result}}"" >> $GITHUB_ENV
         env:
           ISSUE_URL: context.issue.url
-          
+
+      - name: Get name
+        run: echo "NAME=${{steps.set-name.outputs.result}}"" >> $GITHUB_ENV
+
       - name: Notify slack
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
