@@ -23,7 +23,8 @@ Find out more on the <a href="https://layer5.io/community">Layer5 community</a>.
 
 <div>&nbsp;</div>
 
-<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src=".github/readme/images//slack-128.png" style="margin-left:10px;padding-top:5px;" width="110px" align="right" /></a>
+<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="![image](https://user-images.githubusercontent.com/66546980/136098671-013870c4-56f5-4779-be0c-806abb594841.png)
+" style="margin-left:10px;padding-top:5px;" width="110px" align="right" /></a>
 
 <a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src=".github/readme/images//community.svg" style="margin-right:8px;padding-top:5px;" width="140px" align="left" /></a>
 
