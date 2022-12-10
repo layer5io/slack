@@ -5,7 +5,7 @@ Get your invitation to the [Layer5 Slack here](https://slack.layer5.io).
 
 <div>&nbsp;</div>
 
-## Join Community!
+## Join the Community!
 
 <a name="contributing"></a><a name="community"></a>
 Our projects are community-built and welcome collaboration. 👍 Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you and jump into our <a href="http://slack.layer5.io">Slack</a>!
